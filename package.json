@@ -1,0 +1,26 @@
+{
+  "name": "whatsappweb",
+  "version": "1.0.0",
+  "main": "dist/app.js",
+  "bin": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "build": " pkg . --targets node14-win-x64"
+  },
+  "pkg": {
+    "assets": [
+      "dist/**/*"
+    ],
+    "scripts": [
+      "dist/**/*.js"
+    ]
+  },
+  "dependencies": {
+    "puppeteer": "^22.12.0",
+    "qrcode-terminal": "^0.12.0"
+  },
+  "devDependencies": {
+    "javascript-obfuscator": "^2.13.0",
+    "pkg": "^5.8.1"
+  }
+}
