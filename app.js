@@ -194,10 +194,15 @@ const displayQr = async (page) => {
     logInfo("node started")
 
     const browser = await puppeteer.launch({
-      headless: "new",
-      // headless: false,
-      // executablePath: "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
-      executablePath: `C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe`, // Path to Chrome in Docker
+      // headless: "new",
+      // // headless: false,
+      // // executablePath: "C:\\Program Files (x86)\\Google\\Chrome\\Application\\chrome.exe",
+      // executablePath: `C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe`, // Path to Chrome in Docker
+      // args: ['--no-sandbox', '--disable-setuid-sandbox'],
+      // userDataDir
+
+      headless: true, // Enable headless mode
+      executablePath: '/usr/bin/chromium-browser', // Path to Chromium on Linux VPS
       args: ['--no-sandbox', '--disable-setuid-sandbox'],
       userDataDir
     });
